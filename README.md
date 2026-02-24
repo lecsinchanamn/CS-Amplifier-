@@ -1,1 +1,3 @@
 # CS-Amplifier-
+Aim
+Procedure 
