@@ -162,7 +162,25 @@ The seems the sinusoidal input which is applied to the gate terminal.
 https://github.com/lecsinchanamn/CS-Amplifier-/blob/45ae96166965a094bb6a9a214d3a664b2a9166f2/C1%20TA%20op%20wave.jpeg
 The output signal is inverted with repect to the large amplitude.
 # Input and output 
+https://github.com/lecsinchanamn/CS-Amplifier-/blob/9635ce3df65668b926326c989acc58176b7dcf5e/C1%20TA%20IO%20wave.jpeg
+The both input and output sihnal give the 180 dgree phase sift.
+# Pratical Gain calucation fromTransient Waveform
+| Parameter        | Calculation / Formula                 | Result       |
+|-----------------|--------------------------------------|-------------|
+| Vout (p-p)       | Vout(max) − Vout(min)                | 0.528 V − 0.019 V = 0.509 V |
+| Voltage Gain (Av) | Av = Vout / Vin                       | 0.509 / 0.019 = 27.78 V/V |
+| Gain (dB)         | 20 log₁₀(Av)                          | 20 log₁₀(27.78) = 28.87 dB |
 
+# AC Analysis
+A small-amplitude alternating signal is applied to the amplifier to study its behavior over a range of frequencies. This analysis helps determine the frequency response, including how the gain varies with frequency, and allows calculation of the midband gain, where the amplifier operates most linearly.
+# Simulation Parameters
+| Parameter         | Value        |
+|------------------|-------------|
+| Command Type      | AC          |
+| AC Magnitude      | 1 V         |
+| Sweep Type        | .ac dec     |
+| Points per Decade  | 1000        |
+| Start Frequency   | 0.1 Hz      |
+| Stop Frequency    | 1 GHz       |
 
-
-
+# Theoretical Gain
