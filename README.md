@@ -193,4 +193,35 @@ https://github.com/lecsinchanamn/CS-Amplifier-/blob/daa57e26c4d617ea7b03a6dbb058
 
 # Theoretical Gain
 
+| Parameter / Term                   | Value / Calculation                                   |
+|-----------------------------------|------------------------------------------------------|
+| Transconductance (gm₁)             | 1.6 mS                                              |
+| NMOS Output Resistance (ro₁)       | 58.8 kΩ                                             |
+| PMOS Output Resistance (ro₂)       | 58.8 kΩ                                             |
+| Source Resistor (RS)                | 1 kΩ                                                |
+| Gain Denominator Term               | 1 + gm₁ RS + RS/ro₁ → 1 + (1.6e-3 × 1e3) + (1e3 / 58.8e3) ≈ 2.617 |
+| Parallel Output Resistance Term    | [gm₁ RS ro₁ + RS + ro₁] ∥ ro₂ ≈ 42.6 kΩ            |
+| Voltage Gain (Av, V/V)             | Av = -gm₁ / Denominator × Parallel Term → (1.6e-3 / 2.617) × 42.6 kΩ ≈ 26 V/V |
+| Voltage Gain (Av, dB)              | 20 log₁₀(26) ≈ 28 dB                                |
+| Technology Note                     | TSMC 180 nm: λ ≈ 0.1–0.2 V⁻¹ → output resistance matches LTspice OP |
 
+1. Voltage Gain of Source-Degenerated CS Amplifier with Active Load
+Av = - gm / (1 + gm * RS + RS/ro1) * ( (gm * RS * ro1 + RS + ro1) || ro2 )
+2.Using TSMC 180 nm parameters:
+gm  = 1.6e-3   # Transconductance in S (mS)
+RS  = 1e3      # Source resistor in ohms
+ro1 = 58.8e3   # NMOS output resistance in ohms
+ro2 = 58.8e3   # PMOS load output resistance in ohms
+3.Clculated Voltage Gain:
+4. Av = - gm / (1 + gm * RS + RS/ro1) * ( (gm * RS * ro1 + RS + ro1) || ro2 )
+Av_VperV = 26      # Voltage gain in V/V
+Av_dB    = 20 * log10(Av_VperV)  # Voltage gain in dB
+5.Av_dB ≈ 28 dB
+6. Design Highlights:
+7. High gain amplifier
+8. Good linearity due to source degeneration
+9. Proper output swing ensured
+# Observation
+The AC analysis shows a midband gain of 28.71 dB, closely matching the theoretical and transient gain values; the small difference occurs because theoretical calculations assume ideal device behavior, while LTspice includes practical effects such as channel-length modulation.
+
+# CIRCUIT 02
