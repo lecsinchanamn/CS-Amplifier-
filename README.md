@@ -183,4 +183,7 @@ A small-amplitude alternating signal is applied to the amplifier to study its be
 | Start Frequency   | 0.1 Hz      |
 | Stop Frequency    | 1 GHz       |
 
+
+
+
 # Theoretical Gain
