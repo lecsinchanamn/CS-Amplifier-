@@ -183,7 +183,14 @@ A small-amplitude alternating signal is applied to the amplifier to study its be
 | Start Frequency   | 0.1 Hz      |
 | Stop Frequency    | 1 GHz       |
 
-
-
+https://github.com/lecsinchanamn/CS-Amplifier-/blob/daa57e26c4d617ea7b03a6dbb0583781100fb845/C1%20AC%20analysis.jpeg
+# Frequency Response Result
+| Parameter       | Value         |
+|----------------|---------------|
+| Midband Gain    | 28.71 dB      |
+| −3 dB Gain      | 25.71 dB      |
+| Bandwidth       | 52.1 MHz      |
 
 # Theoretical Gain
+
+
