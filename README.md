@@ -103,7 +103,7 @@ https://github.com/lecsinchanamn/CS-Amplifier-/blob/96a6047638f61841df37029962a0
 | VSG (PMOS)      | ≥ VTHp = 0.39 V |               |                                |
 | VSD (PMOS)      | ≥ Vov           | ≤ VDD         | Required for saturation        |
 # Output Voltage for the maximum Swing
-o get the maximum output swing, the NMOS drain voltage is set near half of the supply voltage.
+Get the maximum output swing, the NMOS drain voltage is set near half of the supply voltage.
 | Calculation       | Result       |
 |------------------|-------------|
 | VDS = VDD / 2     | 1.8 / 2 = 0.9 V |
@@ -134,7 +134,9 @@ The obtained value Vov = 0.25 V lies well within this allowable range.
 | PMOS Gate Voltage (VGp)         | VGp = VDD − VSG → 1.8 − 0.64              | 1.16 V  |
 | NMOS Saturation Check           | VDS ≥ Vov → 0.9 ≥ 0.25                     | ✔       |
 | PMOS Saturation Check           | VSD ≥ Vov → 0.7 ≥ 0.25                     | ✔       |
+
 ✅ This one table now includes both PMOS gate bias calculations and NMOS/PMOS saturation verification clearly.
+
 
 
 
