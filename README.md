@@ -156,6 +156,9 @@ A small sinusoidal signal was applied to the gate of the source-degenerated comm
 | Sine          | 1 kHz     | 10 mV     | 0.81 V    | V1 N001 0 SIN(0.81 0.01 1k) |
 The DC offset corresponds to the calculated gate bias voltage required to maintain ID ≈ 200 µA.
 # Input Waveform
+https://github.com/lecsinchanamn/CS-Amplifier-/blob/bff5e321dfe553754a48edd6285e629573bfa983/C1%20TA%20ip%20wave.jpeg
+The seems the sinusoidal input which is applied to the gate terminal.
+# Output Waveform
 
 
 
