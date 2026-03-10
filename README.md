@@ -59,7 +59,28 @@ A Current mirror loaded common source amplifier is a common source (CS) MOS ampl
 | Stability / Linearity         | Improved (RS provides negative feedback) | Good                                | Moderate to good                   |
 | Advantages                    | Simple, stable, reduces distortion    | High gain, high frequency          | Very high gain, compact IC design |
 | Disadvantages                 | Gain lower than simple CS without RS   | More complex than simple CS         | Requires extra transistors for current mirror |
-
+| Category / Concept                 | Equation / Value / Formula                                          | Notes / Variables |
+# Equation requaried for the sloving circuit
+|-----------------------------------|--------------------------------------------------------------------|------------------|
+| **Device Parameters (TSMC 180 nm)** | Supply Voltage: VDD = 1.8 V                                        |                  |
+|                                   | Target Drain Current: ID = 200 µA                                   |                  |
+|                                   | NMOS Threshold: VTHn = 0.36 V                                       |                  |
+|                                   | PMOS Threshold: VTHp = −0.39 V                                      |                  |
+|                                   | Channel Length: L = 560 nm                                          |                  |
+| **Oxide Parameters**               | Oxide Permittivity: εox = 3.54 × 10⁻¹¹ F/m                          |                  |
+|                                   | Oxide Thickness: tox = 4.1 × 10⁻⁹ m                                 |                  |
+|                                   | Oxide Capacitance: Cox = εox / tox = 8.634 × 10⁻³ F/m²             |                  |
+|                                   | Relative Permittivity: εr                                           |                  |
+| **Saturation Conditions**          | NMOS: VDS ≥ VGS − VTHn                                              | Ensures MOSFET in saturation |
+|                                   | PMOS: VSD ≥ VSG − |VTHp|                                             | Ensures MOSFET in saturation |
+| **Process Transconductance**       | NMOS: μnCox = μn × Cox = 2.363 × 10⁻⁴ A/V²                          |                  |
+|                                   | PMOS: μpCox = μp × Cox = 9.99 × 10⁻⁵ A/V²                           |                  |
+| **Saturation Current Equation**    | ID = (1/2) × μCox × (W/L) × (VOV)²                                   | VOV = Overdrive Voltage |
+| **Width Calculation (W)**          | W = (2 × ID × L) / [μCox × (VOV)²]                                  | Rearranged from saturation current |
+|                                   | NMOS Width: WNMOS = 15.16 µm                                        | Using above formula |
+|                                   | PMOS Width: WPMOS = 35.9 µm                                         | PMOS ≈ 2.3 × NMOS width |
+| **Observation / Notes**            | NMOS mobility > PMOS mobility → NMOS requires smaller width         |                  |
+|                                   | PMOS width ≈ 2.3 × NMOS width for same current                      |                  |
 
 
 
