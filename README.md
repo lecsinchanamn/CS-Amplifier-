@@ -28,17 +28,14 @@ Av = - (gm * RD) / (1 + gm * RS)
 # Input Resistance
 Rin ≈ ∞
 # Output Resistance
-Rout ≈ RD
-+----------------------+---------------------------------------+
-| Parameter            | Equation                              |
-+----------------------+---------------------------------------+
-| Drain Current (ID)   | ID = (1/2) * kn * (VGS - VT)^2        |
-| Transconductance     | gm = 2ID / (VGS - VT)                 |
-| Transconductance     | gm = sqrt(2 * kn * ID)                |
-| Voltage Gain (Av)    | Av = -(gm * RD) / (1 + gm * RS)       |
-| Input Resistance     | Rin ≈ ∞                               |
-| Output Resistance    | Rout ≈ RD                             |
-+----------------------+---------------------------------------+
+| Parameter            | Equation                        |
+|----------------------|---------------------------------|
+| Drain Current (ID)   | ID = (1/2) * kn * (VGS - VT)^2  |
+| Transconductance     | gm = 2ID / (VGS - VT)           |
+| Transconductance     | gm = sqrt(2 * kn * ID)          |
+| Voltage Gain (Av)    | Av = -(gm * RD) / (1 + gm * RS) |
+| Input Resistance     | Rin ≈ ∞                         |
+| Output Resistance    | Rout ≈ RD                       |
 
 
 
