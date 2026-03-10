@@ -159,6 +159,9 @@ The DC offset corresponds to the calculated gate bias voltage required to mainta
 https://github.com/lecsinchanamn/CS-Amplifier-/blob/bff5e321dfe553754a48edd6285e629573bfa983/C1%20TA%20ip%20wave.jpeg
 The seems the sinusoidal input which is applied to the gate terminal.
 # Output Waveform
+https://github.com/lecsinchanamn/CS-Amplifier-/blob/45ae96166965a094bb6a9a214d3a664b2a9166f2/C1%20TA%20op%20wave.jpeg
+The output signal is inverted with repect to the large amplitude.
+# Input and output 
 
 
 
