@@ -95,8 +95,7 @@ https://github.com/lecsinchanamn/CS-Amplifier-/blob/96a6047638f61841df37029962a0
 | Target Drain Current (ID) | 200 µA |
 | NMOS Threshold (VTHn)  | 0.36 V  |
 | PMOS Threshold (VTHp)  | −0.39 V |
-# Bias Design and voltage selection
-# In Saturation Operation
+# Bias Design and voltage selection In Saturation Operation
 | Parameter       | Minimum         | Maximum       | Reason                          |
 |-----------------|----------------|---------------|--------------------------------|
 | VGS (NMOS)      | ≥ VTH = 0.36 V | ≤ VDD = 1.8 V | Required for channel formation |
@@ -123,6 +122,7 @@ A small source voltage is introduced using a source resistor to provide negat
 | Overdrive Voltage Verification | VGS = VG − VS → 0.81 − 0.2 = 0.61 V      |
 | Overdrive Voltage Verification | Vov = VGS − VTH → 0.61 − 0.36 = 0.25 V   |
 | Allowable Overdrive Range      | 0 < Vov < VDS → 0 < 0.25 < 0.9 V         |
+
 We have Overdrive range becase
 Thus
 0 < Vov < 0.9
