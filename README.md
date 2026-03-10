@@ -95,12 +95,46 @@ https://github.com/lecsinchanamn/CS-Amplifier-/blob/96a6047638f61841df37029962a0
 | Target Drain Current (ID) | 200 µA |
 | NMOS Threshold (VTHn)  | 0.36 V  |
 | PMOS Threshold (VTHp)  | −0.39 V |
-
-
-
-
-
-
+# Bias Design and voltage selection
+# In Saturation Operation
+| Parameter       | Minimum         | Maximum       | Reason                          |
+|-----------------|----------------|---------------|--------------------------------|
+| VGS (NMOS)      | ≥ VTH = 0.36 V | ≤ VDD = 1.8 V | Required for channel formation |
+| VDS (NMOS)      | ≥ Vov           | ≤ VDD         | Required for saturation        |
+| VSG (PMOS)      | ≥ VTHp = 0.39 V |               |                                |
+| VSD (PMOS)      | ≥ Vov           | ≤ VDD         | Required for saturation        |
+# Output Voltage for the maximum Swing
+o get the maximum output swing, the NMOS drain voltage is set near half of the supply voltage.
+| Calculation       | Result       |
+|------------------|-------------|
+| VDS = VDD / 2     | 1.8 / 2 = 0.9 V |
+# Source Voltage Selection
+A small source voltage is introduced using a source resistor to provide negative feedback and bias stabilization.
+| Parameter | Value  |
+|-----------|--------|
+| VS        | 0.2 V  |
+# Output voltage / Source Resister calucations and NMOS Voltage Verifition / Overdrive Rnage
+| Parameter                     | Calculation / Result                       |
+|-------------------------------|-------------------------------------------|
+| Output Voltage (Vout)          | VDS = Vout − VS → 0.9 = Vout − 0.2 → Vout = 1.1 V |
+| Source Resistor (RS)           | RS = VS / ID → 0.2 / 200µA = 1 kΩ        |
+| NMOS Gate Bias (VGS)           | VGS = VTH + Vov → 0.36 + 0.25 = 0.61 V   |
+| NMOS Gate Voltage (VG)         | VG = VGS + VS → 0.61 + 0.2 = 0.81 V      |
+| Overdrive Voltage Verification | VGS = VG − VS → 0.81 − 0.2 = 0.61 V      |
+| Overdrive Voltage Verification | Vov = VGS − VTH → 0.61 − 0.36 = 0.25 V   |
+| Allowable Overdrive Range      | 0 < Vov < VDS → 0 < 0.25 < 0.9 V         |
+We have Overdrive range becase
+Thus
+0 < Vov < 0.9
+The obtained value Vov = 0.25 V lies well within this allowable range.
+# POMOS bias calucation and Saturation Verification
+| Parameter / Device              | Calculation / Condition                     | Result  |
+|--------------------------------|--------------------------------------------|---------|
+| PMOS Gate-Source Voltage (VSG)  | VSG = Vov + VTHp → 0.25 + 0.39            | 0.64 V  |
+| PMOS Gate Voltage (VGp)         | VGp = VDD − VSG → 1.8 − 0.64              | 1.16 V  |
+| NMOS Saturation Check           | VDS ≥ Vov → 0.9 ≥ 0.25                     | ✔       |
+| PMOS Saturation Check           | VSD ≥ Vov → 0.7 ≥ 0.25                     | ✔       |
+✅ This one table now includes both PMOS gate bias calculations and NMOS/PMOS saturation verification clearly.
 
 
 
