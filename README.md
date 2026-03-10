@@ -86,7 +86,7 @@ A Current mirror loaded common source amplifier is a common source (CS) MOS ampl
 # AIM
 To design and implement a source-degenerated common source amplifier for ID = 200 µA with maximum symmetric output swing.
 # Circuit diogram
-C1 circuit diogram.jpeg
+
 
 
 
