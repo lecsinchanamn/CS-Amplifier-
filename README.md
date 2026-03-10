@@ -82,6 +82,10 @@ A Current mirror loaded common source amplifier is a common source (CS) MOS ampl
 |                                   | PMOS Width: WPMOS = 35.9 µm                                         | PMOS ≈ 2.3 × NMOS width |
 | Observation / Notes                | NMOS mobility > PMOS mobility → NMOS requires smaller width         |                  |
 |                                   | PMOS width ≈ 2.3 × NMOS width for same current                      |                  |
+# CIRCUIT 01
+# AIM
+To design and implement a source-degenerated common source amplifier for ID = 200 µA with maximum symmetric output swing.
+# Circuit diogram
 
 
 
