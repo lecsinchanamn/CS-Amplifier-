@@ -136,7 +136,17 @@ The obtained value Vov = 0.25 V lies well within this allowable range.
 | PMOS Saturation Check           | VSD ≥ Vov → 0.7 ≥ 0.25                     | ✔       |
 
 ✅ This one table now includes both PMOS gate bias calculations and NMOS/PMOS saturation verification clearly.
-
+# DC Operating Point
+| Parameter          | Value       |
+|-------------------|------------|
+| Source Voltage (VS)| 0.2 V      |
+| Drain-Source Voltage (VDS) | 0.9 V |
+| Output Voltage (Vout)      | 1.1 V |
+| NMOS Gate Voltage (VG)     | 0.81 V |
+| PMOS Gate Voltage (VGp)    | 1.16 V |
+1.The bias point keeps both NMOS and PMOS transistors in saturation.
+2.This allows maximum output swing without distortion.
+3.It provides enough voltage headroom for the output signal.
 
 
 
