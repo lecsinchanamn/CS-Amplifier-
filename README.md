@@ -144,11 +144,18 @@ The obtained value Vov = 0.25 V lies well within this allowable range.
 | Output Voltage (Vout)      | 1.1 V |
 | NMOS Gate Voltage (VG)     | 0.81 V |
 | PMOS Gate Voltage (VGp)    | 1.16 V |
+
 1.The bias point keeps both NMOS and PMOS transistors in saturation.
 2.This allows maximum output swing without distortion.
 3.It provides enough voltage headroom for the output signal.
-
-
+https://github.com/lecsinchanamn/CS-Amplifier-/blob/70376820038862b376ba638e759f4d7787873038/C1%20DC%20Analysis.jpeg
+# Transient Analysis 
+A small sinusoidal signal was applied to the gate of the source-degenerated common-source amplifier to analyze its time-domain response.
+| Waveform Type | Frequency | Amplitude | DC Offset | LTspice Input Command |
+|---------------|-----------|-----------|-----------|---------------------|
+| Sine          | 1 kHz     | 10 mV     | 0.81 V    | V1 N001 0 SIN(0.81 0.01 1k) |
+The DC offset corresponds to the calculated gate bias voltage required to maintain ID ≈ 200 µA.
+# Input Waveform
 
 
 
