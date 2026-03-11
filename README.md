@@ -240,6 +240,7 @@ https://github.com/lecsinchanamn/CS-Amplifier-/blob/9c8eacf18bddd1d2dae304446485
 | Voltage Value1 | 0.36 V|
 | Voltage Value2 | -0.39 V|
 +----------------+-------+
+
 # Voltage limits for proper operation / Overdrive voltage determination / Allowable Range
 +----------------------+-------------------------+----------------------+-----------+----------------------+
 | Parameter            | Condition / Equation    | Calculation          | Range     | Reason               |
@@ -253,6 +254,7 @@ https://github.com/lecsinchanamn/CS-Amplifier-/blob/9c8eacf18bddd1d2dae304446485
 | Minimum VOV          | VOV > 0                 | Condition            | Valid     | Proper operation     |
 | Maximum VOV          | VOV < VDS               | Condition            | Valid     | Saturation region    |
 +----------------------+-------------------------+----------------------+-----------+----------------------+
+
 1.Since the drain–source voltage is approximately half of the supply voltage, it can be written as:
 VDS ≈ VDD / 2 = 0.9 V
 2.Therefore, the allowable operating range for the overdrive voltage (VOV) becomes:
@@ -265,6 +267,65 @@ A moderate value of overdrive voltage is preferred in MOSFET design because it o
 1. It provides sufficient transconductance (gm), which improves the amplification capability of the transistor.
 2. It helps maintain a stable drain current, making the circuit operation more reliable.
 3. It leaves adequate voltage headroom for signal swing, allowing the output signal to vary without pushing the transistor out of the desired operating region.
+# Intermediate node voltage / Output voltage selection / Saturation Verification/ Desihn Justification
+
++---------------------------+---------------------------+------------------------+-----------+--------------------------------------+
+| Section                   | Parameter / Device        | Equation / Condition   | Value     | Explanation / Result                 |
++---------------------------+---------------------------+------------------------+-----------+--------------------------------------+
+| Intermediate Node Voltage | VS1 Condition             | VS1 ≥ VOV              | ≥ 0.25 V  | Keeps lower NMOS (M2) in saturation  |
+|                           | Selected VS1              | Design choice          | 0.3 V     | Satisfies saturation requirement     |
+|                           | VDS2                      | VDS2 = VD2 − VS2       | VS1       | Since VS2 = 0                        |
+|                           | Required VDS2             | VDS2 ≥ VOV             | ≥ 0.25 V  | Ensures M2 operates in saturation    |
++---------------------------+---------------------------+------------------------+-----------+--------------------------------------+
+| Output Voltage Selection  | Drain-Source Voltage      | VDS ≈ VDD / 2          | 0.9 V     | Allows maximum signal swing          |
+|                           | Output Voltage (Vout)     | Vout = VDS + VS1       | 1.2 V     | 0.9 + 0.3                            |
++---------------------------+---------------------------+------------------------+-----------+--------------------------------------+
+| Saturation Verification   | M2 (NMOS)                 | VDS2 ≥ VOV             | 0.3 ≥0.25 | ✔ Saturation condition satisfied     |
+|                           | M1 (NMOS)                 | VDS1 ≥ VOV             | 0.9 ≥0.25 | ✔ Saturation condition satisfied     |
+|                           | M3 (PMOS)                 | VSD ≥ VOV              | 0.6 ≥0.25 | ✔ Saturation condition satisfied     |
++---------------------------+---------------------------+------------------------+-----------+--------------------------------------+
+| Design Justification      | VS1 > VOV                 | Bias condition         | Valid     | Keeps lower NMOS in saturation       |
+|                           | VS1 << VDD                | Headroom condition     | Valid     | Preserves voltage headroom           |
+|                           | Stable bias               | Cascode requirement    | Valid     | Ensures proper cascode operation     |
++---------------------------+---------------------------+------------------------+-----------+--------------------------------------+
+# Theory Justification for the Cascode Amplifier Bias Conditions
+The table summarizes the biasing and operating conditions required to ensure that all MOSFETs in the cascode amplifier operate in the saturation region. Proper biasing is essential for achieving high gain, good linearity, and maximum signal swing.
+1. Intermediate Node Voltage (VS1)
+In a cascode amplifier, the drain of the lower NMOS transistor (M2) is directly connected to the source of the upper NMOS transistor (M1). This node is represented by VS1. For the lower transistor M2 to remain in saturation, the drain–source voltage must satisfy the condition:
+VDS2 ≥ VOV
+Since the source of M2 is grounded (VS2 = 0), the drain–source voltage becomes:
+VDS2 = VD2 − VS2 = VS1 − 0 = VS1
+Therefore, the condition for saturation becomes:
+VS1 ≥ VOV
+Given that the overdrive voltage VOV is 0.25 V, the intermediate node voltage must be at least 0.25 V. Choosing VS1 ≈ 0.3 V ensures that the saturation condition is satisfied while still maintaining sufficient voltage headroom for the rest of the circuit.
+2. Output Voltage Selection
+To achieve maximum symmetrical signal swing in analog amplifier design, the drain–source voltage is typically chosen to be approximately half of the supply voltage:
+DS ≈ VDD / 2
+With a supply voltage of VDD = 1.8 V, the drain–source voltage becomes:
+VDS = 1.8 / 2 = 0.9 V
+The output node voltage is the sum of the intermediate node voltage and the drain–source voltage:
+Vout = VDS + VS1
+Substituting the values:
+Vout = 0.9 + 0.3 = 1.2 V
+This operating point allows the output signal to swing both upward and downward without driving the transistors out of the saturation region.
+3. Saturation Verification
+For proper amplifier operation, all transistors must remain in the saturation region.
+• For M2 (lower NMOS):
+VDS2 = 0.3 V and VOV = 0.25 V  
+Since 0.3 ≥ 0.25, M2 operates in saturation.
+• For M1 (upper NMOS):
+VDS1 = 0.9 V and VOV = 0.25 V  
+Since 0.9 ≥ 0.25, M1 also operates in saturation.
+• For M3 (PMOS load transistor):
+The saturation condition is:
+VSD ≥ VOV
+With VSD = 0.6 V and VOV = 0.25 V, the condition is satisfied, ensuring that the PMOS device also operates in saturation.
+4. Design Justification
+The selected bias conditions provide several advantages for the cascode amplifier:
+• VS1 > VOV ensures that the lower NMOS transistor remains in saturation, which is necessary for proper amplification.
+• VS1 << VDD preserves sufficient voltage headroom for the upper transistor and the output signal swing.
+• Stable biasing ensures correct cascode operation, which improves gain, increases output resistance, and enhances overall amplifier performance.
+# DC Operating Point
 
 
 
