@@ -421,6 +421,18 @@ https://github.com/lecsinchanamn/CS-Amplifier-/blob/75daaf670c3e716598628519e2bb
 | VOV       | 0.25 V   |
 | VDD       | 1.8 V    |
 
+# 1.Diode-connectedNMOS /2. Gate voltage of M1 / 3.PMOS gate voltage / 4.Output voltage  
+| Steps                        | Parameter / Device        | Calculation / Condition              | Value       | Result / Comment                                  |
+|------------------------------|--------------------------|------------------------------------|------------|--------------------------------------------------|
+| 1. Diode-Connected NMOS      | M3 (NMOS)               | VGS3 = VTHn + VOV                  | 0.36 + 0.25 | 0.61 V                                           |
+|                              | VD3                     | VD3 = VS1                           | 0.61 V     | Fixes source voltage of M1                        |
+| 2. Gate Voltage of M1        | M1 (NMOS)               | VGS1 = VTHn + VOV                  | 0.36 + 0.25 | 0.61 V                                           |
+|                              | VG1                     | VG1 = VS1 + VGS1                    | 0.61 + 0.61 | 1.22 V → Input DC bias                           |
+| 3. PMOS Gate Voltage         | M2 (PMOS)               | VSG2 = |VTHp| + VOV                 | 0.39 + 0.25 | 0.64 V                                           |
+|                              | VG2                     | VG2 = VDD − VSG2                    | 1.8 − 0.64 | 1.16 V → PMOS gate bias                          |
+| 4. Output Voltage            | VDS1 & Vout             | VDS1 = VDD / 2                       | 0.9 V      | Vout = VDS1 + VS1 = 0.9 + 0.61                  |
+|                              | Vout                    |                                     | 1.51 V     | All transistors in saturation                     |
+| 5. Why lower VS1 will not work | VS1 = 0.2 V            | VGS3 = 0.2 V < VTHn                  | 0.36 V     | M3 turns OFF, current will not flow             |
 
 
 
