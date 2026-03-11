@@ -409,8 +409,17 @@ The theoretical gain (~6.88 dB) closely matches the AC and transient simulation 
 5.Therefore, a small variation of a few tenths of a dB is expected.
 # CIRCUIT 03
 # AIM
-Design and implement the Common Source Amplifier with Diode-Connected NMOS Current Source and PMOS Active Load inLTspice usingtsmc18nm technoly
-
+Design and implement the Common Source Amplifier with Diode-Connected NMOS Current Source and PMOS Active Load inLTspice usingtsmc18nm technoly.
+# Circuit diogram
+https://github.com/lecsinchanamn/CS-Amplifier-/blob/75daaf670c3e716598628519e2bba69656f752aa/C3%20circuit%20diogram.jpeg
+# DC Analysis
+# Given parameter
+| Parameter | Value    |
+|-----------|----------|
+| VTHn      | 0.36 V   |
+| VTHp      | -0.39 V  |
+| VOV       | 0.25 V   |
+| VDD       | 1.8 V    |
 
 
 
