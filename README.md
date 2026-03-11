@@ -319,6 +319,22 @@ The biasing ensures all MOSFETs operate in the saturation region, which is neces
 | ID        | 200 µA  |
 | VOV       | 0.25 V  |
 
+# circuit diogram
+https://github.com/lecsinchanamn/CS-Amplifier-/blob/d7994c6fe38173468c28e0034b532dc0d9badc55/C2%20circuit%20diogram.jpeg
+# Width swlwction 
+The transistor widths were calculated using the square-law equation for MOSFETs in saturation.
+This equation relates drain current (ID) to the transistor’s width, length, and gate overdrive voltage (VOV).
+The widths were chosen to achieve ID ≈ 200 µA,
+| Device                  | Calculated Width | Practical Width |
+|-------------------------|-----------------|----------------|
+| M1 (NMOS – Cascode)     | 15.16 µm        | 26.88 µm       |
+| M2 (NMOS – Input)       | 15.16 µm        | 29.09 µm       |
+| M3 (PMOS – Active Load) | 35.9 µm         | 83.37 µm       |
 
-
-
+# Justification
+1.The calculated widths ensure each transistor can provide the desired drain current (ID ≈ 200 µA).
+2.Wider practical widths improve matching and reduce variations due to fabrication processes.
+3.Increasing widths increases transconductance (gm), improving amplifier gain.
+4.Larger widths for the PMOS load (M3) ensure proper current sourcing and stable operation.
+5.The combination of calculated and practical widths ensures reliable performance and proper saturation operation for all devices.
+# Transient Analysis
