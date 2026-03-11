@@ -503,3 +503,45 @@ https://github.com/lecsinchanamn/CS-Amplifier-/blob/2eb630cf294757f3de933b38dc29
 | Frequency Range         | 0.1 Hz to 1 GHz           |
 | Points per Decade        | 1000                     |
 
+https://github.com/lecsinchanamn/CS-Amplifier-/blob/02fe419544b169f6ec94149f213d4f9357c7ae15/C3%20AC%20analysis.jpeg
+| Parameter           | Value         |
+|---------------------|---------------|
+| Maximum Gain        | ≈ 25.55 dB   |
+| Measured AC Gain    | 25.55 dB     |
+| -3dB Point          | 22.55 dB     |
+| Corresponding Frequency | 118.304 MHz |
+
+# Theortical gain 
+| Parameter           | Calculation / Condition          | Value         |
+|---------------------|---------------------------------|---------------|
+| gm1                 | Transconductance                 | 1.6 mS        |
+| ro1, ro2, ro3       | Output resistances               | 25 kΩ each    |
+| ro1 || ro2          | Parallel combination             | 12.5 kΩ       |
+| Denominator         | 1 + gm1 × ro3                    | 1 + (1.6mS × 25k) = 41 |
+| Voltage Gain Av     | -(gm1 / Denominator) × (ro1 || ro2) | -19.5 V/V  |
+| Gain in dB          | 20 × log10(|Av|)                 | 25.8 dB       |
+
+# Why there is  difference Between Theoretical and Simulation Gain
+1.Theoretical gain uses simplified small-signal equations.
+
+2.Simulation (LTspice) uses a complete MOSFET model (BSIM).
+
+3.Effects included in simulation:
+
+4.Channel length modulation
+
+5.Parasitic capacitances
+
+6.Mobility degradation
+
+7.Body effect
+
+8.Actual gm and ro from operating point
+
+9.Because of these real-world effects, a small difference of ~0.5–1 dB is expected.
+
+
+
+
+
+
