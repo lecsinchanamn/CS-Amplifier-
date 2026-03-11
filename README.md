@@ -478,6 +478,7 @@ Adjusted widths were chosen to ensure all transistors stay in saturation and ID 
 | Simulation Time | .tran 0 5m      |
 
 # Input waveform
-
+https://github.com/lecsinchanamn/CS-Amplifier-/blob/4eec4a4325bb017e0bdd6ed2905de4818e0646e1/C2%20ip%20wave.jpeg
+# Output waveform
 
 
