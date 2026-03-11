@@ -483,6 +483,23 @@ https://github.com/lecsinchanamn/CS-Amplifier-/blob/4eec4a4325bb017e0bdd6ed2905d
 https://github.com/lecsinchanamn/CS-Amplifier-/blob/3e52957efff81d943cdee9db9f6ca0b3a99568a1/C2%20op%20wave.jpeg
 # Both input and output waveform
 https://github.com/lecsinchanamn/CS-Amplifier-/blob/2eb630cf294757f3de933b38dc2989fb820870cd/C3%20io%20wave.jpeg
+# Observation table
+| Parameter      | Calculation                     | Value        |
+|----------------|---------------------------------|-------------|
+| Vin (p-p)      | 1.229 V − 1.210 V               | 0.019 V     |
+| Vout (p-p)     | 1.618 V − 1.235 V               | 0.383 V     |
+| Practical Gain | Av = Vout / Vin                  | 20.157 V/V  |
+| Gain in dB     | Av(dB) = 20 × log10(Av)         | 26.08 dB    |
 
-
+1.Vin and Vout measurement: The input and output peak-to-peak voltages were measured from the simulation, giving Vin = 0.019 V and Vout = 0.383 V.
+2.Practical gain calculation: The voltage gain Av = Vout / Vin = 20.157 V/V, which shows significant amplification by the circuit.
+3.Gain in dB: Converting to decibels gives Av(dB) = 26.08 dB, confirming that the amplifier provides a high gain consistent with expectations.
+# AC Analysis
+| Parameter               | Value                     |
+|-------------------------|---------------------------|
+| Purpose                 | Determine midband gain and bandwidth |
+| Simulation Type         | Small-signal AC analysis  |
+| AC Simulation Command   | .ac dec 1000 .1 1G       |
+| Frequency Range         | 0.1 Hz to 1 GHz           |
+| Points per Decade        | 1000                     |
 
