@@ -231,15 +231,14 @@ Design and implement the Casecode amplifer in LTspices usong 180nm technolgy
 https://github.com/lecsinchanamn/CS-Amplifier-/blob/9c8eacf18bddd1d2dae304446485eedf6b3dd824/C2%20circuit%20diogram.jpeg
 # DC Analysis
 # Design paramater
-+----------------+-------+
-| Parameter      | Value |
-+----------------+-------+
-| DDIDVTHn       | VTHp  |
-| Voltage        | 1.8 V |
-| Current        | 200 µA|
-| Voltage Value1 | 0.36 V|
-| Voltage Value2 | -0.39 V|
-+----------------+-------+
++------------------+---------+
+| Parameter        | Value   |
++------------------+---------+
+| VDD              | 1.8 V   |
+| ID               | 200 µA  |
+| VTHn             | 0.36 V  |
+| VTHp             | -0.39 V |
++------------------+---------+
 
 # Voltage limits for proper operation / Overdrive voltage determination / Allowable Range
 +----------------------+-------------------------+----------------------+-----------+----------------------+
