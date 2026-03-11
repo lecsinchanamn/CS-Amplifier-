@@ -228,7 +228,43 @@ The AC analysis shows a midband gain of 28.71 dB, closely matching the theoretic
 # AIM
 Design and implement the Casecode amplifer in LTspices usong 180nm technolgy
 # Circuit diogram
-
+https://github.com/lecsinchanamn/CS-Amplifier-/blob/9c8eacf18bddd1d2dae304446485eedf6b3dd824/C2%20circuit%20diogram.jpeg
+# DC Analysis
+# Design paramater
++----------------+-------+
+| Parameter      | Value |
++----------------+-------+
+| DDIDVTHn       | VTHp  |
+| Voltage        | 1.8 V |
+| Current        | 200 µA|
+| Voltage Value1 | 0.36 V|
+| Voltage Value2 | -0.39 V|
++----------------+-------+
+# Voltage limits for proper operation / Overdrive voltage determination / Allowable Range
++----------------------+-------------------------+----------------------+-----------+----------------------+
+| Parameter            | Condition / Equation    | Calculation          | Range     | Reason               |
++----------------------+-------------------------+----------------------+-----------+----------------------+
+| VGS (NMOS)           | VGS ≥ VTH               | VTH = 0.36 V         | ≤ 1.8 V   | Channel formation    |
+| VDS (NMOS)           | VDS ≥ VOV               | VOV = 0.25 V         | ≤ 1.8 V   | Saturation condition |
+| VSG (PMOS)           | VSG ≥ |VTHp|            | VTHp = 0.39 V        | ≤ 1.8 V   | Channel formation    |
+| VSD (PMOS)           | VSD ≥ VOV               | VOV = 0.25 V         | ≤ 1.8 V   | Saturation condition |
+| VGS Calculation      | VGS = VTH + VOV         | 0.36 + 0.25          | 0.61 V    | Overdrive relation   |
+| VOV Verification     | VOV = VGS − VTH         | 0.61 − 0.36          | 0.25 V    | Overdrive check      |
+| Minimum VOV          | VOV > 0                 | Condition            | Valid     | Proper operation     |
+| Maximum VOV          | VOV < VDS               | Condition            | Valid     | Saturation region    |
++----------------------+-------------------------+----------------------+-----------+----------------------+
+1.Since the drain–source voltage is approximately half of the supply voltage, it can be written as:
+VDS ≈ VDD / 2 = 0.9 V
+2.Therefore, the allowable operating range for the overdrive voltage (VOV) becomes:
+0 < VOV < 0.9 V
+3.The calculated overdrive voltage is:
+VOV = 0.25 V
+This value clearly lies within the allowable range, which confirms that the chosen operating point satisfies the required condition for proper transistor operation.
+# Justification:
+A moderate value of overdrive voltage is preferred in MOSFET design because it offers several advantages:
+1. It provides sufficient transconductance (gm), which improves the amplification capability of the transistor.
+2. It helps maintain a stable drain current, making the circuit operation more reliable.
+3. It leaves adequate voltage headroom for signal swing, allowing the output signal to vary without pushing the transistor out of the desired operating region.
 
 
 
