@@ -349,4 +349,6 @@ The widths were chosen to achieve ID ≈ 200 µA,
 # Input waveform
 https://github.com/lecsinchanamn/CS-Amplifier-/blob/5d8e3f8d0b82faf3e9cad7131e24480eefa82e59/C1%20TA%20op%20wave.jpeg
 # Output waveform
+https://github.com/lecsinchanamn/CS-Amplifier-/blob/2e23a1292de258b05461f8899db993cf5d684886/C2%20op%20wave.jpeg
+# Both input and output waveform
 
