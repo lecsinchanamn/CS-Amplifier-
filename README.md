@@ -434,6 +434,9 @@ https://github.com/lecsinchanamn/CS-Amplifier-/blob/75daaf670c3e716598628519e2bb
 |                              | Vout                    |                                     | 1.51 V     | All transistors in saturation                     |
 | 5. Why lower VS1 will not work | VS1 = 0.2 V            | VGS3 = 0.2 V < VTHn                  | 0.36 V     | M3 turns OFF, current will not flow             |
 
+# DC opreating point in simulation
+https://github.com/lecsinchanamn/CS-Amplifier-/blob/528e3ec2a8cb02f617b76a617f3dc20413f34d88/C3%20DC%20analysis.jpeg
+
 
 
 
