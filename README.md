@@ -374,45 +374,33 @@ Midband Gain and Bandwidth Analysis:
    AC Simulation Command: .ac dec 1000 .1 1G
    Input AC Magnitude: 1 V
 3. AC Gain Results:
-AC Gain Results:
-
-+-------------------------+-------------+
-| Parameter               | Value       |
-+-------------------------+-------------+
-| Maximum Gain            | ≈ 6.94 dB  |
-| Measured AC Gain        | 6.94 dB    |
-| -3dB Point              | 3.94 dB    |
-| Corresponding Frequency | 45.289 MHz |
-+-------------------------+-------------+
-4. Observation:
-- The measured AC gain (6.94 dB) closely matches the previously calculated transient gain.
-- The -3dB frequency at 45.289 MHz defines the bandwidth of the amplifier.
-- 
+1.Maximum Gain: ≈ 6.94 dB
+2.Measured AC Gain: 6.94 dB
+3.-3dB Point: 3.94 dB
+4.Corresponding Frequency: 45.289 MHz
+. Observation:
+1. The measured AC gain (6.94 dB) closely matches the previously calculated transient gain.
+2. The -3dB frequency at 45.289 MHz defines the bandwidth of the amplifier.
 https://github.com/lecsinchanamn/CS-Amplifier-/blob/5d70a6b2ff26694d3f9260c08dd17dde5a3dd2f2/C2%20AC%20Analysis.jpeg
 Transistor Gain Calculation:
 # Theoretical Gain
-1. Parameters:
-| Parameter | Value      |
-|-----------|-----------|
-| gm1       | 1.6 mS    |
-| ro1       | 1.5 kΩ    |
-| ro2       | 1.5 kΩ    |
-| ro3       | 1.5 kΩ    |
+1.parameter
+1.gm1 = 1.6 mS
+2.ro1 = 1.5 kΩ
+3.ro2 = 1.5 kΩ
+4.ro3 = 1.5 kΩ
+2.Gain Formula:
+Av = gm1 / (1 + gm1 × ro2 + ro2/ro1) × ([gm1 × ro2 × ro1 + ro2 + ro1] || ro3)
+3.Substitution and Calculation:
+4.Denominator: 1 + gm1 × ro2 + ro2/ro1 = 4.4
+5.Bracket term: gm1 × ro2 × ro1 + ro2 + ro1 = 6.6 kΩ
+6.Parallel with ro3: 6.6 kΩ || 1.5 kΩ ≈ 1.2 kΩ
+7.voltage Gain Av: -(gm1 / Denominator) × Bracket term = -(1.6 mS / 4.4) × 1.2 kΩ
+8.Calculated Av ≈ -2.18 V/V
+9.Gain in dB: 20 × log10(|Av|) ≈ 6.9 dB
+10.bservation:
+The theoretical gain (~6.88 dB) closely matches the AC and transient simulation (~6.9 dB), confirming correct amplifier operation.
 
-2. Gain Formula:
-Av = gm1 / (1 + gm1 * ro2 + ro2/ro1) × ([gm1 * ro2 * ro1 + ro2 + ro1] || ro3)
-3. Substitution and Calculation:
-| Step                  | Expression                     | Value          |
-|-----------------------|--------------------------------|----------------|
-| Denominator           | 1 + gm1*ro2 + ro2/ro1         | 4.4            |
-| Bracket term          | gm1*ro2*ro1 + ro2 + ro1       | 6.6 kΩ         |
-| Parallel with ro3     | 6.6 kΩ || 1.5 kΩ              | 1.2 kΩ         |
-| Voltage Gain Av       | -(gm1 / Denominator) × Bracket | -(1.6 mS / 4.4) × 1.2 kΩ |
-| Calculated Av         |                                | -2.18 V/V      |
-| Gain in dB            | 20 × log10(|Av|)              | 6.9 dB         |
-
-4. Observation:
-1. Theoretical gain ≈ 6.88 dB, which nearly matches the AC and transient simulation results (≈ 6.9 dB).
 # Justification
 1.The small difference between theoretical and simulated gain is normal.
 2.Theoretical gain uses simplified small-signal equations.
