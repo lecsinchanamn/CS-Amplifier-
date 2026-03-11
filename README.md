@@ -444,9 +444,9 @@ MOSFET widths were calculated using the square-law saturation equation to get ID
 
 2.Calculated widths:
 
-NMOS: 15.16 µm
+1.NMOS: 15.16 µm
 
-PMOS: 35.9 µm
+2.PMOS: 35.9 µm
 
 3.Practical Adjustment:
 
@@ -468,8 +468,16 @@ Adjusted widths were chosen to ensure all transistors stay in saturation and ID 
 
 3.M3 (NMOS) – 33.26 µm
 
+# Transient Analysis
+| Parameter       | Value             |
+|-----------------|-----------------|
+| Input Signal    | Vin = SINE(1.22 10m 1k) |
+| AC Amplitude    | 10 mV           |
+| DC Offset       | 1.22 V          |
+| Frequency       | 1 kHz           |
+| Simulation Time | .tran 0 5m      |
 
-
+# Input waveform
 
 
 
