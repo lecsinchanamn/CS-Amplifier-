@@ -374,12 +374,12 @@ Midband Gain and Bandwidth Analysis:
    AC Simulation Command: .ac dec 1000 .1 1G
    Input AC Magnitude: 1 V
 3. AC Gain Results:
-| Parameter              | Value        |
-|------------------------|-------------|
-| Maximum Gain           | ≈ 6.94 dB  |
-| Measured AC Gain       | 6.94 dB    |
-| -3dB Point             | 3.94 dB    |
-| Corresponding Frequency| 45.289 MHz |
+| Parameter               | Value        |
+|-------------------------|-------------|
+| Maximum Gain            | ≈ 6.94 dB  |
+| Measured AC Gain        | 6.94 dB    |
+| -3dB Point              | 3.94 dB    |
+| Corresponding Frequency | 45.289 MHz |
 4. Observation:
 - The measured AC gain (6.94 dB) closely matches the previously calculated transient gain.
 - The -3dB frequency at 45.289 MHz defines the bandwidth of the amplifier.
