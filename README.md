@@ -407,7 +407,9 @@ The theoretical gain (~6.88 dB) closely matches the AC and transient simulation 
 3.LTspice simulations use the full BSIM transistor model.
 4.Effects like channel length modulation, parasitic capacitance, and mobility degradation are included.
 5.Therefore, a small variation of a few tenths of a dB is expected.
-
+# CIRCUIT 03
+# AIM
+Design and implement the Common Source Amplifier with Diode-Connected NMOS Current Source and PMOS Active Load inLTspice usingtsmc18nm technoly
 
 
 
