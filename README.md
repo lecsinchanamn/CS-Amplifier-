@@ -326,7 +326,15 @@ The selected bias conditions provide several advantages for the cascode amplifie
 • VS1 << VDD preserves sufficient voltage headroom for the upper transistor and the output signal swing.
 • Stable biasing ensures correct cascode operation, which improves gain, increases output resistance, and enhances overall amplifier performance.
 # DC Operating Point
-
++-----------+---------+
+| Parameter | Value   |
++-----------+---------+
+| VS2       | 0 V     |
+| VS1       | 0.3 V   |
+| Vout      | 1.2 V   |
+| ID        | 200 µA  |
+| VOV       | 0.25 V  |
++-----------+---------+
 
 
 
