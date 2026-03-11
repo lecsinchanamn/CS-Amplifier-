@@ -225,3 +225,13 @@ Av_dB    = 20 * log10(Av_VperV)  # Voltage gain in dB
 The AC analysis shows a midband gain of 28.71 dB, closely matching the theoretical and transient gain values; the small difference occurs because theoretical calculations assume ideal device behavior, while LTspice includes practical effects such as channel-length modulation.
 
 # CIRCUIT 02
+# AIM
+Design and implement the Casecode amplifer in LTspices usong 180nm technolgy
+# Circuit diogram
+
+
+
+
+
+
+
