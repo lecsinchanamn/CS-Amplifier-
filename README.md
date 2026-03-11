@@ -482,5 +482,7 @@ https://github.com/lecsinchanamn/CS-Amplifier-/blob/4eec4a4325bb017e0bdd6ed2905d
 # Output waveform
 https://github.com/lecsinchanamn/CS-Amplifier-/blob/3e52957efff81d943cdee9db9f6ca0b3a99568a1/C2%20op%20wave.jpeg
 # Both input and output waveform
+https://github.com/lecsinchanamn/CS-Amplifier-/blob/2eb630cf294757f3de933b38dc2989fb820870cd/C3%20io%20wave.jpeg
+
 
 
