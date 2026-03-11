@@ -338,3 +338,15 @@ The widths were chosen to achieve ID ≈ 200 µA,
 4.Larger widths for the PMOS load (M3) ensure proper current sourcing and stable operation.
 5.The combination of calculated and practical widths ensures reliable performance and proper saturation operation for all devices.
 # Transient Analysis
+# Input parameters
+| Parameter          | Value        |
+|-------------------|-------------|
+| Waveform           | Sine        |
+| Frequency          | 1 kHz       |
+| Amplitude          | 10 mV       |
+| DC Offset          | 0.916 V     |
+| Simulation Command | .tran 0 5m  |
+# Input waveform
+https://github.com/lecsinchanamn/CS-Amplifier-/blob/5d8e3f8d0b82faf3e9cad7131e24480eefa82e59/C1%20TA%20op%20wave.jpeg
+# Output waveform
+
