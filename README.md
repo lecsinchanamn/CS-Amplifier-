@@ -206,20 +206,34 @@ https://github.com/lecsinchanamn/CS-Amplifier-/blob/daa57e26c4d617ea7b03a6dbb058
 | Technology Note                     | TSMC 180 nm: λ ≈ 0.1–0.2 V⁻¹ → output resistance matches LTspice OP |
 
 1. Voltage Gain of Source-Degenerated CS Amplifier with Active Load
+
 Av = - gm / (1 + gm * RS + RS/ro1) * ( (gm * RS * ro1 + RS + ro1) || ro2 )
+
 2.Using TSMC 180 nm parameters:
+
 gm  = 1.6e-3   # Transconductance in S (mS)
+
 RS  = 1e3      # Source resistor in ohms
+
 ro1 = 58.8e3   # NMOS output resistance in ohms
+
 ro2 = 58.8e3   # PMOS load output resistance in ohms
+
 3.Clculated Voltage Gain:
 Av = - gm / (1 + gm * RS + RS/ro1) * ( (gm * RS * ro1 + RS + ro1) || ro2 )
+
 Av_VperV = 26      # Voltage gain in V/V
+
 Av_dB    = 20 * log10(Av_VperV)  # Voltage gain in dB
+
 Av_dB ≈ 28 dB
+
 4. Design Highlights:
+ 
 High gain amplifier
+
  Good linearity due to source degeneration
+ 
 4. Proper output swing ensured
 # Observation
 The AC analysis shows a midband gain of 28.71 dB, closely matching the theoretical and transient gain values; the small difference occurs because theoretical calculations assume ideal device behavior, while LTspice includes practical effects such as channel-length modulation.
@@ -369,36 +383,63 @@ https://github.com/lecsinchanamn/CS-Amplifier-/blob/b095f763a5d2c640d932a459b258
 # Frequency Response                 |
 Midband Gain and Bandwidth Analysis:
 1. Purpose:
+ 
    To determine midband gain and bandwidth, a small-signal AC analysis was performed.
-2. AC Simulation:
+   
+3. AC Simulation:
+4. 
    AC Simulation Command: .ac dec 1000 .1 1G
+   
    Input AC Magnitude: 1 V
-3. AC Gain Results:
+5. AC Gain Results:
+6. 
 1.Maximum Gain: ≈ 6.94 dB
+
 2.Measured AC Gain: 6.94 dB
+
 3.-3dB Point: 3.94 dB
+
 4.Corresponding Frequency: 45.289 MHz
+
 . Observation:
+
 1. The measured AC gain (6.94 dB) closely matches the previously calculated transient gain.
-2. The -3dB frequency at 45.289 MHz defines the bandwidth of the amplifier.
+2. 
+3. The -3dB frequency at 45.289 MHz defines the bandwidth of the amplifier.
+4. 
 https://github.com/lecsinchanamn/CS-Amplifier-/blob/5d70a6b2ff26694d3f9260c08dd17dde5a3dd2f2/C2%20AC%20Analysis.jpeg
-Transistor Gain Calculation:
+
 # Theoretical Gain
 1.parameter
+
 1.gm1 = 1.6 mS
+
 2.ro1 = 1.5 kΩ
+
 3.ro2 = 1.5 kΩ
+
 4.ro3 = 1.5 kΩ
+
 2.Gain Formula:
+
 Av = gm1 / (1 + gm1 × ro2 + ro2/ro1) × ([gm1 × ro2 × ro1 + ro2 + ro1] || ro3)
+
 3.Substitution and Calculation:
+
 4.Denominator: 1 + gm1 × ro2 + ro2/ro1 = 4.4
+
 5.Bracket term: gm1 × ro2 × ro1 + ro2 + ro1 = 6.6 kΩ
+
 6.Parallel with ro3: 6.6 kΩ || 1.5 kΩ ≈ 1.2 kΩ
+
 7.voltage Gain Av: -(gm1 / Denominator) × Bracket term = -(1.6 mS / 4.4) × 1.2 kΩ
+
 8.Calculated Av ≈ -2.18 V/V
+
 9.Gain in dB: 20 × log10(|Av|) ≈ 6.9 dB
+
 10.bservation:
+
 The theoretical gain (~6.88 dB) closely matches the AC and transient simulation (~6.9 dB), confirming correct amplifier operation.
 
 # Justification
