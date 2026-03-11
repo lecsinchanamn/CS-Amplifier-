@@ -351,4 +351,19 @@ https://github.com/lecsinchanamn/CS-Amplifier-/blob/5d8e3f8d0b82faf3e9cad7131e24
 # Output waveform
 https://github.com/lecsinchanamn/CS-Amplifier-/blob/2e23a1292de258b05461f8899db993cf5d684886/C2%20op%20wave.jpeg
 # Both input and output waveform
+https://github.com/lecsinchanamn/CS-Amplifier-/blob/b095f763a5d2c640d932a459b25803ddb6d29ae0/C2%20AC%20Analysis.jpeg
+| Parameter   | Value                        |
+|------------|-------------------------------|
+| Vin (p-p)   | 0.925 − 0.906 = 0.019 V      |
+| Vout (p-p)  | 1.225 − 1.183 = 0.042 V      |
+| Gain (Av)   | 0.042 / 0.019 = 2.21 V/V     |
+| Gain (dB)   | 6.88 dB                       |
+
+# Justification
+1.Vin (p-p) shows the input signal peak-to-peak voltage applied to the amplifier.
+2.Vout (p-p) shows the resulting output signal peak-to-peak voltage after amplification.
+3.Gain (Av) is calculated as the ratio of output to input voltage, indicating the amplifier’s voltage amplification.
+4.Gain (dB) converts the voltage gain into decibels for easier comparison and standard reporting.
+5.These values confirm that the amplifier is functioning correctly, providing a measurable and expected signal amplification.
+# AC Analysis
 
