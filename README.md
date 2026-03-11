@@ -539,6 +539,29 @@ https://github.com/lecsinchanamn/CS-Amplifier-/blob/02fe419544b169f6ec94149f213d
 8.Actual gm and ro from operating point
 
 9.Because of these real-world effects, a small difference of ~0.5–1 dB is expected.
+# Conclusion
+1.CS Amplifier with Source Degeneration
+
+1.Provides improved linearity and stability.
+
+2.Source resistor reduces gain slightly but increases input linearity.
+
+3.Good for moderate gain, low distortion applications.
+2. Cascode Amplifier
+
+1.Offers high gain and high output resistance.
+
+2.Minimizes Miller effect, improving bandwidth.
+
+3.Ideal for high-frequency and low-noise applications.
+
+3. Current Mirror Loaded with Current Mirror (Common)
+
+1.Provides active load, increasing voltage gain.
+
+2.Ensures constant bias current and improves linearity.
+
+3.Often used in differential and amplifier stages to maximize performance.
 
 
 
