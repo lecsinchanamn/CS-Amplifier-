@@ -439,19 +439,33 @@ https://github.com/lecsinchanamn/CS-Amplifier-/blob/528e3ec2a8cb02f617b76a617f3d
 
 # Width Selection for Circuit A
 1.Initial Calculation:
+
 MOSFET widths were calculated using the square-law saturation equation to get ID ≈ 200 µA.
+
 2.Calculated widths:
+
 NMOS: 15.16 µm
+
 PMOS: 35.9 µm
+
 3.Practical Adjustment:
+
 2.In LTspice simulations, the theoretical widths did not give exactly 200 µA due to:
+
 1.Cascode bias sensitivity
+
 2.Channel length modulation
+
 3.Other non-ideal device effects
+
 3.Final Widths Used:
+
 Adjusted widths were chosen to ensure all transistors stay in saturation and ID ≈ 200 µA:
+
 1.M1 (NMOS) – 26.34 µm
+
 2.M2 (PMOS) – 87.87 µm
+
 3.M3 (NMOS) – 33.26 µm
 
 
