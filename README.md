@@ -267,16 +267,23 @@ https://github.com/lecsinchanamn/CS-Amplifier-/blob/9c8eacf18bddd1d2dae304446485
 
 1.Since the drain–source voltage is approximately half of the supply voltage, it can be written as:
 VDS ≈ VDD / 2 = 0.9 V
+
 2.Therefore, the allowable operating range for the overdrive voltage (VOV) becomes:
 0 < VOV < 0.9 V
+
 3.The calculated overdrive voltage is:
 VOV = 0.25 V
 This value clearly lies within the allowable range, which confirms that the chosen operating point satisfies the required condition for proper transistor operation.
+
 # Justification:
-A moderate value of overdrive voltage is preferred in MOSFET design because it offers several advantages:
+A moderate value of overdrive voltage is preferred in MOSFET design because 
+it offers several advantages:
 1. It provides sufficient transconductance (gm), which improves the amplification capability of the transistor.
+ 
 2. It helps maintain a stable drain current, making the circuit operation more reliable.
+  
 3. It leaves adequate voltage headroom for signal swing, allowing the output signal to vary without pushing the transistor out of the desired operating region.
+  
 # Intermediate node voltage / Output voltage selection / Saturation Verification/ Desihn Justification
 
 | Section                   | Parameter / Device        | Equation / Condition   | Value     | Explanation / Result                 |
@@ -348,10 +355,15 @@ The widths were chosen to achieve ID ≈ 200 µA,
 
 # Justification
 1.The calculated widths ensure each transistor can provide the desired drain current (ID ≈ 200 µA).
+
 2.Wider practical widths improve matching and reduce variations due to fabrication processes.
+
 3.Increasing widths increases transconductance (gm), improving amplifier gain.
+
 4.Larger widths for the PMOS load (M3) ensure proper current sourcing and stable operation.
+
 5.The combination of calculated and practical widths ensures reliable performance and proper saturation operation for all devices.
+
 # Transient Analysis
 # Input parameters
 | Parameter          | Value        |
@@ -376,24 +388,28 @@ https://github.com/lecsinchanamn/CS-Amplifier-/blob/b095f763a5d2c640d932a459b258
 
 # Justification
 1.Vin (p-p) shows the input signal peak-to-peak voltage applied to the amplifier.
+
 2.Vout (p-p) shows the resulting output signal peak-to-peak voltage after amplification.
+
 3.Gain (Av) is calculated as the ratio of output to input voltage, indicating the amplifier’s voltage amplification.
+
 4.Gain (dB) converts the voltage gain into decibels for easier comparison and standard reporting.
-5.These values confirm that the amplifier is functioning correctly, providing a measurable and expected signal amplification.
+5.These values confirm that
+the amplifier is functioning correctly, providing a measurable and expected signal amplification.
+
 # AC Analysis
 # Frequency Response                 |
 Midband Gain and Bandwidth Analysis:
 1. Purpose:
+To determine midband gain and bandwidth, a small-signal AC analysis was performed.
+   
+2. AC Simulation:
+AC Simulation Command: .ac dec 1000 .1 1G
+   
+3. Input AC Magnitude: 1 V
  
-   To determine midband gain and bandwidth, a small-signal AC analysis was performed.
-   
-3. AC Simulation:
-4. 
-   AC Simulation Command: .ac dec 1000 .1 1G
-   
-   Input AC Magnitude: 1 V
-5. AC Gain Results:
-6. 
+4.AC Gain Results:
+ 
 1.Maximum Gain: ≈ 6.94 dB
 
 2.Measured AC Gain: 6.94 dB
@@ -402,16 +418,16 @@ Midband Gain and Bandwidth Analysis:
 
 4.Corresponding Frequency: 45.289 MHz
 
-. Observation:
+# Observation:
 
 1. The measured AC gain (6.94 dB) closely matches the previously calculated transient gain.
-2. 
-3. The -3dB frequency at 45.289 MHz defines the bandwidth of the amplifier.
-4. 
+ 
+2. The -3dB frequency at 45.289 MHz defines the bandwidth of the amplifier.
+ 
 https://github.com/lecsinchanamn/CS-Amplifier-/blob/5d70a6b2ff26694d3f9260c08dd17dde5a3dd2f2/C2%20AC%20Analysis.jpeg
 
 # Theoretical Gain
-1.parameter
+# parameter
 
 1.gm1 = 1.6 mS
 
@@ -421,34 +437,39 @@ https://github.com/lecsinchanamn/CS-Amplifier-/blob/5d70a6b2ff26694d3f9260c08dd1
 
 4.ro3 = 1.5 kΩ
 
-2.Gain Formula:
+5.Gain Formula:
 
 Av = gm1 / (1 + gm1 × ro2 + ro2/ro1) × ([gm1 × ro2 × ro1 + ro2 + ro1] || ro3)
 
-3.Substitution and Calculation:
+# Substitution and Calculation:
 
-4.Denominator: 1 + gm1 × ro2 + ro2/ro1 = 4.4
+1.Denominator: 1 + gm1 × ro2 + ro2/ro1 = 4.4
 
-5.Bracket term: gm1 × ro2 × ro1 + ro2 + ro1 = 6.6 kΩ
+2.Bracket term: gm1 × ro2 × ro1 + ro2 + ro1 = 6.6 kΩ
 
-6.Parallel with ro3: 6.6 kΩ || 1.5 kΩ ≈ 1.2 kΩ
+3.Parallel with ro3: 6.6 kΩ || 1.5 kΩ ≈ 1.2 kΩ
 
-7.voltage Gain Av: -(gm1 / Denominator) × Bracket term = -(1.6 mS / 4.4) × 1.2 kΩ
+4.voltage Gain Av: -(gm1 / Denominator) × Bracket term = -(1.6 mS / 4.4) × 1.2 kΩ
 
-8.Calculated Av ≈ -2.18 V/V
+5.Calculated Av ≈ -2.18 V/V
 
-9.Gain in dB: 20 × log10(|Av|) ≈ 6.9 dB
+6.Gain in dB: 20 × log10(|Av|) ≈ 6.9 dB
 
-10.bservation:
+# Observation:
 
 The theoretical gain (~6.88 dB) closely matches the AC and transient simulation (~6.9 dB), confirming correct amplifier operation.
 
 # Justification
 1.The small difference between theoretical and simulated gain is normal.
+
 2.Theoretical gain uses simplified small-signal equations.
+
 3.LTspice simulations use the full BSIM transistor model.
+
 4.Effects like channel length modulation, parasitic capacitance, and mobility degradation are included.
+
 5.Therefore, a small variation of a few tenths of a dB is expected.
+
 # CIRCUIT 03
 # AIM
 Design and implement the Common Source Amplifier with Diode-Connected NMOS Current Source and PMOS Active Load inLTspice usingtsmc18nm technoly.
