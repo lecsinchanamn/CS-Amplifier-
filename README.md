@@ -11,6 +11,7 @@ Amplifer) Configurations using (tsmc 180nm)
  LT spice simulation with tsnc 180nm Technology.
  # what is MOS Amplifer?
 The main component is a MOSFET (Metal-Oxide-Semiconductor Field Effect Transistor)
+
 1.Gate (G) – where the input signal is given
 
 2.Drain (D) – where the output comes from
@@ -560,8 +561,11 @@ https://github.com/lecsinchanamn/CS-Amplifier-/blob/2eb630cf294757f3de933b38dc29
 | Gain in dB     | Av(dB) = 20 × log10(Av)         | 26.08 dB    |
 
 1.Vin and Vout measurement: The input and output peak-to-peak voltages were measured from the simulation, giving Vin = 0.019 V and Vout = 0.383 V.
+
 2.Practical gain calculation: The voltage gain Av = Vout / Vin = 20.157 V/V, which shows significant amplification by the circuit.
+
 3.Gain in dB: Converting to decibels gives Av(dB) = 26.08 dB, confirming that the amplifier provides a high gain consistent with expectations.
+
 # AC Analysis
 | Parameter               | Value                     |
 |-------------------------|---------------------------|
