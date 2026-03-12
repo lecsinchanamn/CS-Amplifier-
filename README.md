@@ -12,12 +12,18 @@ Amplifer) Configurations using (tsmc 180nm)
  # what is MOS Amplifer?
 The main component is a MOSFET (Metal-Oxide-Semiconductor Field Effect Transistor)
 1.Gate (G) – where the input signal is given
+
 2.Drain (D) – where the output comes from
+
 3.Source (S) – reference terminal
+
  # How it works ?
 1.A small voltage is applied to the gate.
+
 2.The MOSFET controls the current flowing inside the circuit.
+
 3.The output at the drain becomes stronger than the input signal.
+
 # What is CS Amplifer with Source Degeration and it's related equation?
 A Common Source amplifier with source degeneration is a MOSFET amplifier where a resistor is added in the source terminal to improve stability and linearity.
 
@@ -400,23 +406,23 @@ the amplifier is functioning correctly, providing a measurable and expected sign
 # AC Analysis
 # Frequency Response                 |
 Midband Gain and Bandwidth Analysis:
-1. Purpose:
-To determine midband gain and bandwidth, a small-signal AC analysis was performed.
+# Purpose:
+1.To determine midband gain and bandwidth, a small-signal AC analysis was performed.
    
-2. AC Simulation:
-AC Simulation Command: .ac dec 1000 .1 1G
+# AC Simulation:
+1.AC Simulation Command: .ac dec 1000 .1 1G
    
-3. Input AC Magnitude: 1 V
+2.Input AC Magnitude: 1 V
  
-4.AC Gain Results:
+3.AC Gain Results:
  
-1.Maximum Gain: ≈ 6.94 dB
+4.Maximum Gain: ≈ 6.94 dB
 
-2.Measured AC Gain: 6.94 dB
+5.Measured AC Gain: 6.94 dB
 
-3.-3dB Point: 3.94 dB
+6.-3dB Point: 3.94 dB
 
-4.Corresponding Frequency: 45.289 MHz
+7.Corresponding Frequency: 45.289 MHz
 
 # Observation:
 
@@ -438,7 +444,6 @@ https://github.com/lecsinchanamn/CS-Amplifier-/blob/5d70a6b2ff26694d3f9260c08dd1
 4.ro3 = 1.5 kΩ
 
 5.Gain Formula:
-
 Av = gm1 / (1 + gm1 × ro2 + ro2/ro1) × ([gm1 × ro2 × ro1 + ro2 + ro1] || ro3)
 
 # Substitution and Calculation:
@@ -615,14 +620,15 @@ https://github.com/lecsinchanamn/CS-Amplifier-/blob/02fe419544b169f6ec94149f213d
 | Complexity          | Medium                             | High                           | Medium                         |
 
 # Conclusion
-1.CS Amplifier with Source Degeneration
+# CS Amplifier with Source Degeneration
 
 1.Provides improved linearity and stability.
 
 2.Source resistor reduces gain slightly but increases input linearity.
 
 3.Good for moderate gain, low distortion applications.
-2. Cascode Amplifier
+
+# Cascode Amplifier
 
 1.Offers high gain and high output resistance.
 
@@ -630,7 +636,7 @@ https://github.com/lecsinchanamn/CS-Amplifier-/blob/02fe419544b169f6ec94149f213d
 
 3.Ideal for high-frequency and low-noise applications.
 
-3. Current Mirror Loaded with Current Mirror (Common)
+# Current Mirror Loaded with Current Mirror (Common)
 
 1.Provides active load, increasing voltage gain.
 
