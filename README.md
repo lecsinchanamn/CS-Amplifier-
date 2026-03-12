@@ -213,36 +213,36 @@ https://github.com/lecsinchanamn/CS-Amplifier-/blob/daa57e26c4d617ea7b03a6dbb058
 | Voltage Gain (Av, dB)              | 20 log₁₀(26) ≈ 28 dB                                |
 | Technology Note                     | TSMC 180 nm: λ ≈ 0.1–0.2 V⁻¹ → output resistance matches LTspice OP |
 
-1. Voltage Gain of Source-Degenerated CS Amplifier with Active Load
+# Voltage Gain of Source-Degenerated CS Amplifier with Active Load
 
+1.Av = - gm / (1 + gm * RS + RS/ro1) * ( (gm * RS * ro1 + RS + ro1) || ro2 )
+ 
+# Using TSMC 180 nm parameters:
+
+1.gm  = 1.6e-3   # Transconductance in S (mS)
+
+2.RS  = 1e3      # Source resistor in ohms
+
+3.ro1 = 58.8e3   # NMOS output resistance in ohms
+
+4.ro2 = 58.8e3   # PMOS load output resistance in ohms
+
+# Clculated Voltage Gain:
 Av = - gm / (1 + gm * RS + RS/ro1) * ( (gm * RS * ro1 + RS + ro1) || ro2 )
 
-2.Using TSMC 180 nm parameters:
+1.Av_VperV = 26      # Voltage gain in V/V
 
-gm  = 1.6e-3   # Transconductance in S (mS)
+2.Av_dB    = 20 * log10(Av_VperV)  # Voltage gain in dB
 
-RS  = 1e3      # Source resistor in ohms
+3.Av_dB ≈ 28 dB
 
-ro1 = 58.8e3   # NMOS output resistance in ohms
-
-ro2 = 58.8e3   # PMOS load output resistance in ohms
-
-3.Clculated Voltage Gain:
-Av = - gm / (1 + gm * RS + RS/ro1) * ( (gm * RS * ro1 + RS + ro1) || ro2 )
-
-Av_VperV = 26      # Voltage gain in V/V
-
-Av_dB    = 20 * log10(Av_VperV)  # Voltage gain in dB
-
-Av_dB ≈ 28 dB
-
-4. Design Highlights:
+# Design Highlights:
  
-High gain amplifier
+1.High gain amplifier
 
- Good linearity due to source degeneration
+2.Good linearity due to source degeneration
  
-4. Proper output swing ensured
+5. Proper output swing ensured
 # Observation
 The AC analysis shows a midband gain of 28.71 dB, closely matching the theoretical and transient gain values; the small difference occurs because theoretical calculations assume ideal device behavior, while LTspice includes practical effects such as channel-length modulation.
 
