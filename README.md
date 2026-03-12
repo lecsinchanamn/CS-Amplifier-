@@ -1,5 +1,6 @@
 # Experiment No 02
-# CS Amplifer (common source Amplifer) Configurations using (tsmc 180nm)
+# CS Amplifer (common source
+Amplifer) Configurations using (tsmc 180nm)
 # AIM
  Design the CS Amplifer Configuration using tsmc180nm.
  # Configuration
