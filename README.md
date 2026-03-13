@@ -634,24 +634,21 @@ https://github.com/lecsinchanamn/CS-Amplifier-/blob/02fe419544b169f6ec94149f213d
 
 # Cascode Amplifier
 
-1.Offers high gain and high output resistance.
+- Offers high gain and high output resistance.
 
-2.Minimizes Miller effect, improving bandwidth.
+- Minimizes Miller effect, improving bandwidth.
 
 3.Ideal for high-frequency and low-noise applications.
 
 # Current Mirror Loaded with Current Mirror (Common)
 
-1.Provides active load, increasing voltage gain.
+- Provides active load, increasing voltage gain.
 
-2.Ensures constant bias current and improves linearity.
+- Ensures constant bias current and improves linearity.
 
-3.Often used in differential and amplifier stages to maximize performance.
--uio-97rd
+- Often used in differential and amplifier stages to maximize performance.
 
 
-- huuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu
--fffffffffffffffffffffffff
 
 
 
