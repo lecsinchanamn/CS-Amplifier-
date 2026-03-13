@@ -647,8 +647,7 @@ https://github.com/lecsinchanamn/CS-Amplifier-/blob/02fe419544b169f6ec94149f213d
 2.Ensures constant bias current and improves linearity.
 
 3.Often used in differential and amplifier stages to maximize performance.
-
-
+-uio-97rd
 
 
 
